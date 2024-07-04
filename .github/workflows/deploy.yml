@@ -16,7 +16,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Updated to Node.js 16
+        node-version: '16'  # Ensure Node.js 16 is used
 
     - name: Install dependencies
       run: npm install
@@ -29,4 +29,4 @@ jobs:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       run: |
         npm install -g vercel
-        vercel --prod --token $VERCEL_TOKEN
+        vercel --prod --token $VERCEL_TOKEN --confirm --scope your-vercel-scope
